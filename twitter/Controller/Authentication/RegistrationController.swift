@@ -10,6 +10,14 @@ import SnapKit
 
 class RegistrationController: UIViewController {
     // MARK: - Properties
+    lazy var imagePicker: UIImagePickerController = {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        return picker
+    }()
+    
     let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
@@ -102,7 +110,7 @@ class RegistrationController: UIViewController {
     }
     
     @objc func handleAppProfilePhoto() {
-        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @objc func handleRegistration() {
@@ -128,7 +136,7 @@ class RegistrationController: UIViewController {
             make.centerX.equalToSuperview()
             make.width.height.equalTo(128.0)
         }
-
+        
         alreadyHaveAccountButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.trailing.leading.equalToSuperview().inset(40)
@@ -138,5 +146,20 @@ class RegistrationController: UIViewController {
             make.top.equalTo(plusPhotoButton.snp.bottom).offset(32)
             make.leading.trailing.equalToSuperview().inset(32)
         }
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let profileImage = info[.editedImage] as? UIImage else { return }
+        plusPhotoButton.layer.cornerRadius = 128 / 2
+        plusPhotoButton.layer.masksToBounds = true
+        plusPhotoButton.imageView?.contentMode = .scaleAspectFill
+        plusPhotoButton.imageView?.clipsToBounds = true
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 3
+        plusPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        dismiss(animated: true)
     }
 }
