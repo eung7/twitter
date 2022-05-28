@@ -63,7 +63,7 @@ class LoginController: UIViewController {
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
-     
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +72,8 @@ class LoginController: UIViewController {
     
     // MARK: - Selectors
     @objc func handleLogin() {
-        
+        let vc = RegistrationController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func handleShowSignUp() {
@@ -91,16 +92,17 @@ class LoginController: UIViewController {
         [ logoImageView, stack, dontHaveAccountButton ]
             .forEach { view.addSubview($0) }
         
-        view.addSubview(logoImageView)
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.height.width.equalTo(150)
         }
+        
         stack.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom)
             make.leading.trailing.equalToSuperview().inset(32)
         }
+        
         dontHaveAccountButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.trailing.leading.equalToSuperview().inset(40)
