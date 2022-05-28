@@ -17,6 +17,10 @@
 		E5F2F212284204F7007CF7C6 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F211284204F7007CF7C6 /* ExploreController.swift */; };
 		E5F2F2142842051B007CF7C6 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F2132842051B007CF7C6 /* NotificationsController.swift */; };
 		E5F2F2162842052B007CF7C6 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F2152842052B007CF7C6 /* ConversationsController.swift */; };
+		E5F2F21A28420DD8007CF7C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F21928420DD8007CF7C6 /* Extensions.swift */; };
+		E5F2F21D2842126F007CF7C6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F21C2842126F007CF7C6 /* LoginController.swift */; };
+		E5F2F21F2842140A007CF7C6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F21E2842140A007CF7C6 /* RegistrationController.swift */; };
+		E5F2F22228423D20007CF7C6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5F2F22128423D20007CF7C6 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,9 @@
 		E5F2F211284204F7007CF7C6 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		E5F2F2132842051B007CF7C6 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		E5F2F2152842052B007CF7C6 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		E5F2F21928420DD8007CF7C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E5F2F21C2842126F007CF7C6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E5F2F21E2842140A007CF7C6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F2F22228423D20007CF7C6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +72,12 @@
 		E5F2F1F22841FC29007CF7C6 /* twitter */ = {
 			isa = PBXGroup;
 			children = (
-				E5F2F20C284202C9007CF7C6 /* Util */,
 				E5F2F20B2842028E007CF7C6 /* API */,
 				E5F2F20A2842028D007CF7C6 /* Model */,
 				E5F2F2092842028B007CF7C6 /* View */,
 				E5F2F20828420289007CF7C6 /* ViewModel */,
 				E5F2F20728420271007CF7C6 /* Controller */,
+				E5F2F20C284202C9007CF7C6 /* Utilities */,
 				E5F2F1F32841FC29007CF7C6 /* AppDelegate.swift */,
 				E5F2F1F52841FC29007CF7C6 /* SceneDelegate.swift */,
 				E5F2F1F92841FC29007CF7C6 /* Main.storyboard */,
@@ -83,6 +91,7 @@
 		E5F2F20728420271007CF7C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E5F2F21B2842124E007CF7C6 /* Authentication */,
 				E5F2F20D28420393007CF7C6 /* MainTabController.swift */,
 				E5F2F20F284204C1007CF7C6 /* FeedController.swift */,
 				E5F2F211284204F7007CF7C6 /* ExploreController.swift */,
@@ -120,11 +129,21 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		E5F2F20C284202C9007CF7C6 /* Util */ = {
+		E5F2F20C284202C9007CF7C6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E5F2F21928420DD8007CF7C6 /* Extensions.swift */,
 			);
-			path = Util;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E5F2F21B2842124E007CF7C6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E5F2F21C2842126F007CF7C6 /* LoginController.swift */,
+				E5F2F21E2842140A007CF7C6 /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +162,9 @@
 			dependencies = (
 			);
 			name = twitter;
+			packageProductDependencies = (
+				E5F2F22128423D20007CF7C6 /* SnapKit */,
+			);
 			productName = twitter;
 			productReference = E5F2F1F02841FC29007CF7C6 /* twitter.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +193,9 @@
 				Base,
 			);
 			mainGroup = E5F2F1E72841FC29007CF7C6;
+			packageReferences = (
+				E5F2F22028423D20007CF7C6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E5F2F1F12841FC29007CF7C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,9 +226,12 @@
 				E5F2F2142842051B007CF7C6 /* NotificationsController.swift in Sources */,
 				E5F2F2162842052B007CF7C6 /* ConversationsController.swift in Sources */,
 				E5F2F1F42841FC29007CF7C6 /* AppDelegate.swift in Sources */,
+				E5F2F21A28420DD8007CF7C6 /* Extensions.swift in Sources */,
+				E5F2F21D2842126F007CF7C6 /* LoginController.swift in Sources */,
 				E5F2F212284204F7007CF7C6 /* ExploreController.swift in Sources */,
 				E5F2F20E28420393007CF7C6 /* MainTabController.swift in Sources */,
 				E5F2F1F62841FC29007CF7C6 /* SceneDelegate.swift in Sources */,
+				E5F2F21F2842140A007CF7C6 /* RegistrationController.swift in Sources */,
 				E5F2F210284204C1007CF7C6 /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5F2F22028423D20007CF7C6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5F2F22128423D20007CF7C6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5F2F22028423D20007CF7C6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5F2F1E82841FC29007CF7C6 /* Project object */;
 }
