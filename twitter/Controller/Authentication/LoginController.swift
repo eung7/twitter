@@ -45,6 +45,24 @@ class LoginController: UIViewController {
         tf.isSecureTextEntry = true
         return tf
     }()
+    
+    let loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Log In", for: .normal)
+        button.setTitleColor(UIColor.twitterBlue, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 5.0
+        button.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .bold)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.snp.makeConstraints { $0.height.equalTo(50.0) }
+        return button
+    }()
+    
+    let dontHaveAccountButton: UIButton = {
+        let button = Utilities.attributedButton("Don't have an account", " Sign Up")
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+        return button
+    }()
      
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -53,17 +71,24 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Selectors
+    @objc func handleLogin() {
+        
+    }
+    
+    @objc func handleShowSignUp() {
+        
+    }
     
     // MARK: - Helpers
     func configureUI() {
         view.backgroundColor = .twitterBlue
         navigationController?.navigationBar.barStyle = .black
         
-        let stack = UIStackView(arrangedSubviews: [ emailContainerView, passwordContainerView ])
+        let stack = UIStackView(arrangedSubviews: [ emailContainerView, passwordContainerView, loginButton ])
         stack.axis = .vertical
-        stack.spacing = 8
+        stack.spacing = 20
         
-        [ logoImageView, stack ]
+        [ logoImageView, stack, dontHaveAccountButton ]
             .forEach { view.addSubview($0) }
         
         view.addSubview(logoImageView)
@@ -72,10 +97,13 @@ class LoginController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.height.width.equalTo(150)
         }
-        
         stack.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(32)
+        }
+        dontHaveAccountButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.trailing.leading.equalToSuperview().inset(40)
         }
     }
 }
