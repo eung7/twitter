@@ -39,7 +39,7 @@ class RegistrationController: UIViewController {
     
     lazy var registrationButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Log In", for: .normal)
+        button.setTitle("Registration", for: .normal)
         button.setTitleColor(UIColor.twitterBlue, for: .normal)
         button.backgroundColor = .white
         button.layer.cornerRadius = 5.0
@@ -127,7 +127,7 @@ class RegistrationController: UIViewController {
               let username = usernameTextField.text else { return }
         let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
         AuthService.shared.registerUser(credentials: credentials) { error, ref in
-            
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

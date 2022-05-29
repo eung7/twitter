@@ -13,13 +13,10 @@ struct UserService {
     func fetchUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         REF_USERS.child(uid).observeSingleEvent(of: .value) { snapshot in
-            guard let dic = snapshot.value as? [String: Any],
-                  let username = dic["username"] as? String,
-                  let 
-                    
+            guard let dic = snapshot.value as? [String: Any] else { return }
+            let user = User(uid: uid, dic: dic)
             
-            else { return }
-            
+            print(user)
         }
     }
 }
