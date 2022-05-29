@@ -23,12 +23,15 @@ class MainTabController: UITabBarController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        logUserOut()
         view.backgroundColor = .twitterBlue
         authenticateUserAndConfigure()
     }
     
     // MARK: - API
+    func fetchUser() {
+        UserService.shared.fetchUser()
+    }
+    
     func authenticateUserAndConfigure() {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
@@ -39,6 +42,7 @@ class MainTabController: UITabBarController {
         } else {
             configureViewControllers()
             configureUI()
+            fetchUser()
         }
     }
     

@@ -27,6 +27,7 @@
 		E5F2F22F2842FD6F007CF7C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F22E2842FD6F007CF7C6 /* Constants.swift */; };
 		E5F2F23128430E39007CF7C6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23028430E39007CF7C6 /* AuthService.swift */; };
 		E5F2F23328431B3E007CF7C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F2F23228431B3E007CF7C6 /* GoogleService-Info.plist */; };
+		E5F2F23528435034007CF7C6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23428435034007CF7C6 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E5F2F22E2842FD6F007CF7C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5F2F23028430E39007CF7C6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E5F2F23228431B3E007CF7C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E5F2F23428435034007CF7C6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F2F23028430E39007CF7C6 /* AuthService.swift */,
+				E5F2F23428435034007CF7C6 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F2F23528435034007CF7C6 /* UserService.swift in Sources */,
 				E5F2F2142842051B007CF7C6 /* NotificationsController.swift in Sources */,
 				E5F2F2162842052B007CF7C6 /* ConversationsController.swift in Sources */,
 				E5F2F2242842469E007CF7C6 /* Utilities.swift in Sources */,
