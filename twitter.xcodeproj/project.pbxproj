@@ -34,6 +34,7 @@
 		E5F2F23E28438376007CF7C6 /* CaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23D28438376007CF7C6 /* CaptionTextView.swift */; };
 		E5F2F24028438BEF007CF7C6 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23F28438BEF007CF7C6 /* TweetService.swift */; };
 		E5F2F24228439042007CF7C6 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F24128439042007CF7C6 /* Tweet.swift */; };
+		E5F2F24428439970007CF7C6 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F24328439970007CF7C6 /* TweetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		E5F2F23D28438376007CF7C6 /* CaptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionTextView.swift; sourceTree = "<group>"; };
 		E5F2F23F28438BEF007CF7C6 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
 		E5F2F24128439042007CF7C6 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		E5F2F24328439970007CF7C6 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F2F23D28438376007CF7C6 /* CaptionTextView.swift */,
+				E5F2F24328439970007CF7C6 /* TweetCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				E5F2F23C28436C01007CF7C6 /* UploadTweetController.swift in Sources */,
 				E5F2F23728435CE9007CF7C6 /* User.swift in Sources */,
 				E5F2F212284204F7007CF7C6 /* ExploreController.swift in Sources */,
+				E5F2F24428439970007CF7C6 /* TweetCell.swift in Sources */,
 				E5F2F20E28420393007CF7C6 /* MainTabController.swift in Sources */,
 				E5F2F1F62841FC29007CF7C6 /* SceneDelegate.swift in Sources */,
 				E5F2F21F2842140A007CF7C6 /* RegistrationController.swift in Sources */,

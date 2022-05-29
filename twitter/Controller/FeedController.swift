@@ -9,7 +9,9 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class FeedController: UIViewController {
+private let reuseIdentifier = "TweetCell"
+
+class FeedController: UICollectionViewController {
     // MARK: - Properties
     var user: User? {
         didSet {
@@ -34,6 +36,9 @@ class FeedController: UIViewController {
     // MARK: - Helpers
     func configureUI() {
         view.backgroundColor = .systemBackground
+        
+        collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.backgroundColor = .white
 
         let imageView = UIImageView(image: UIImage(named: "twitter_logo_blue"))
         imageView.snp.makeConstraints { $0.height.width.equalTo(44) }
@@ -49,5 +54,22 @@ class FeedController: UIViewController {
         profileImageView.layer.cornerRadius = 32 / 2
         profileImageView.kf.setImage(with: user.profileImageURL)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
+    }
+}
+
+extension FeedController {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TweetCell else { return UICollectionViewCell() }
+        return cell
+    }
+}
+
+extension FeedController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 200)
     }
 }
