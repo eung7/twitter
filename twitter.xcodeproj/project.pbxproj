@@ -25,6 +25,8 @@
 		E5F2F2292842F3EE007CF7C6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E5F2F2282842F3EE007CF7C6 /* FirebaseAuth */; };
 		E5F2F22B2842F3EE007CF7C6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E5F2F22A2842F3EE007CF7C6 /* FirebaseDatabase */; };
 		E5F2F22D2842F3EE007CF7C6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E5F2F22C2842F3EE007CF7C6 /* FirebaseStorage */; };
+		E5F2F22F2842FD6F007CF7C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F22E2842FD6F007CF7C6 /* Constants.swift */; };
+		E5F2F23128430E39007CF7C6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23028430E39007CF7C6 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		E5F2F21E2842140A007CF7C6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		E5F2F2232842469E007CF7C6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E5F2F2252842F257007CF7C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5F2F22E2842FD6F007CF7C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E5F2F23028430E39007CF7C6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		E5F2F20B2842028E007CF7C6 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E5F2F23028430E39007CF7C6 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			children = (
 				E5F2F21928420DD8007CF7C6 /* Extensions.swift */,
 				E5F2F2232842469E007CF7C6 /* Utilities.swift */,
+				E5F2F22E2842FD6F007CF7C6 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -242,11 +248,13 @@
 				E5F2F1F42841FC29007CF7C6 /* AppDelegate.swift in Sources */,
 				E5F2F21A28420DD8007CF7C6 /* Extensions.swift in Sources */,
 				E5F2F21D2842126F007CF7C6 /* LoginController.swift in Sources */,
+				E5F2F23128430E39007CF7C6 /* AuthService.swift in Sources */,
 				E5F2F212284204F7007CF7C6 /* ExploreController.swift in Sources */,
 				E5F2F20E28420393007CF7C6 /* MainTabController.swift in Sources */,
 				E5F2F1F62841FC29007CF7C6 /* SceneDelegate.swift in Sources */,
 				E5F2F21F2842140A007CF7C6 /* RegistrationController.swift in Sources */,
 				E5F2F210284204C1007CF7C6 /* FeedController.swift in Sources */,
+				E5F2F22F2842FD6F007CF7C6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

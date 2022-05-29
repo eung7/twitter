@@ -7,9 +7,14 @@
 
 import UIKit
 import SnapKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class RegistrationController: UIViewController {
     // MARK: - Properties
+    var profileImage: UIImage?
+    
     lazy var imagePicker: UIImagePickerController = {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -94,7 +99,6 @@ class RegistrationController: UIViewController {
     
     let usernameTextField: UITextField = {
         let tf = Utilities.textField(withPlaceholder: "Username")
-        tf.isSecureTextEntry = true
         return tf
     }()
     
@@ -114,7 +118,17 @@ class RegistrationController: UIViewController {
     }
     
     @objc func handleRegistration() {
-        
+        guard let profileImage = profileImage else {
+            print("Please select a profile Image..."); return
+        }
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text,
+              let fullname = fullnameTextField.text,
+              let username = usernameTextField.text else { return }
+        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
+        AuthService.shared.registerUser(credentials: credentials) { error, ref in
+            
+        }
     }
     
     // MARK: - Helpers
@@ -153,6 +167,7 @@ class RegistrationController: UIViewController {
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let profileImage = info[.editedImage] as? UIImage else { return }
+        self.profileImage = profileImage
         plusPhotoButton.layer.cornerRadius = 128 / 2
         plusPhotoButton.layer.masksToBounds = true
         plusPhotoButton.imageView?.contentMode = .scaleAspectFill
