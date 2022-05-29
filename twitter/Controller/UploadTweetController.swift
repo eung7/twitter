@@ -10,6 +10,8 @@ import SnapKit
 
 class UploadTweetController: UIViewController {
     // MARK: - Properties
+    private let user: User
+    
     lazy var tweetButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .twitterBlue
@@ -24,7 +26,27 @@ class UploadTweetController: UIViewController {
         return button
     }()
     
+    let profileImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.clipsToBounds = true
+        iv.snp.makeConstraints { $0.height.equalTo(48); $0.width.equalTo(48) }
+        iv.backgroundColor = .twitterBlue
+        iv.layer.cornerRadius = 48 / 2
+        
+        return iv
+    }()
+    
     // MARK: - LifeCycle
+    init(user: User) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -36,7 +58,6 @@ class UploadTweetController: UIViewController {
     }
     
     @objc func handleUploadTweet() {
-        print("ddd")
     }
     
     // MARK: - API
@@ -44,6 +65,19 @@ class UploadTweetController: UIViewController {
     // MARK: - Helpers
     func configureUI() {
         view.backgroundColor = .white
+        configureNavigationBar()
+
+        view.addSubview(profileImageView)
+        
+        profileImageView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.leading.equalToSuperview().inset(16)
+        }
+        profileImageView.kf.setImage(with: user.profileImageURL)
+        profileImageView.contentMode = .scaleAspectFill
+    }
+    
+    func configureNavigationBar() {
         navigationController?.navigationBar.barTintColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .cancel,
