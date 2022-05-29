@@ -31,6 +31,7 @@
 		E5F2F23728435CE9007CF7C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23628435CE9007CF7C6 /* User.swift */; };
 		E5F2F23A28436238007CF7C6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E5F2F23928436238007CF7C6 /* Kingfisher */; };
 		E5F2F23C28436C01007CF7C6 /* UploadTweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23B28436C01007CF7C6 /* UploadTweetController.swift */; };
+		E5F2F23E28438376007CF7C6 /* CaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23D28438376007CF7C6 /* CaptionTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		E5F2F23428435034007CF7C6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E5F2F23628435CE9007CF7C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5F2F23B28436C01007CF7C6 /* UploadTweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetController.swift; sourceTree = "<group>"; };
+		E5F2F23D28438376007CF7C6 /* CaptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		E5F2F2092842028B007CF7C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5F2F23D28438376007CF7C6 /* CaptionTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				E5F2F23528435034007CF7C6 /* UserService.swift in Sources */,
 				E5F2F2142842051B007CF7C6 /* NotificationsController.swift in Sources */,
+				E5F2F23E28438376007CF7C6 /* CaptionTextView.swift in Sources */,
 				E5F2F2162842052B007CF7C6 /* ConversationsController.swift in Sources */,
 				E5F2F2242842469E007CF7C6 /* Utilities.swift in Sources */,
 				E5F2F1F42841FC29007CF7C6 /* AppDelegate.swift in Sources */,

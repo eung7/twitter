@@ -11,6 +11,7 @@ import SnapKit
 class UploadTweetController: UIViewController {
     // MARK: - Properties
     private let user: User
+    let captionTextView = CaptionTextView()
     
     lazy var tweetButton: UIButton = {
         let button = UIButton(type: .system)
@@ -66,15 +67,20 @@ class UploadTweetController: UIViewController {
     func configureUI() {
         view.backgroundColor = .white
         configureNavigationBar()
-
-        view.addSubview(profileImageView)
         
-        profileImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.leading.equalToSuperview().inset(16)
-        }
+        let stack = UIStackView(arrangedSubviews: [ profileImageView, captionTextView ])
+        stack.axis = .horizontal
+        stack.spacing = 12
+        
         profileImageView.kf.setImage(with: user.profileImageURL)
         profileImageView.contentMode = .scaleAspectFill
+
+        [ stack ].forEach { view.addSubview($0) }
+        
+        stack.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.trailing.leading.equalToSuperview().inset(16)
+        }
     }
     
     func configureNavigationBar() {
