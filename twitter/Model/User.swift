@@ -11,14 +11,17 @@ struct User {
     let fullname: String
     let email: String
     let username: String
-    let profileImageURL: String
+    var profileImageURL: URL?
     let uid: String
     
     init(uid: String, dic: [String: Any]) {
         self.uid = uid
         self.email = dic["email"] as? String ?? ""
         self.username = dic["username"] as? String ?? ""
-        self.profileImageURL = dic["profileImageURL"] as? String ?? ""
         self.fullname = dic["fullname"] as? String ?? ""
+        if let profileImageURLString = dic["profileImageURL"] as? String {
+            guard let url = URL(string: profileImageURLString) else { return }
+            self.profileImageURL = url
+        }
     }
 }

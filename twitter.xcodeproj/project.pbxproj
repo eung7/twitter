@@ -29,6 +29,8 @@
 		E5F2F23328431B3E007CF7C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F2F23228431B3E007CF7C6 /* GoogleService-Info.plist */; };
 		E5F2F23528435034007CF7C6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23428435034007CF7C6 /* UserService.swift */; };
 		E5F2F23728435CE9007CF7C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23628435CE9007CF7C6 /* User.swift */; };
+		E5F2F23A28436238007CF7C6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E5F2F23928436238007CF7C6 /* Kingfisher */; };
+		E5F2F23C28436C01007CF7C6 /* UploadTweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F23B28436C01007CF7C6 /* UploadTweetController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,7 @@
 		E5F2F23228431B3E007CF7C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E5F2F23428435034007CF7C6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E5F2F23628435CE9007CF7C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E5F2F23B28436C01007CF7C6 /* UploadTweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 				E5F2F22D2842F3EE007CF7C6 /* FirebaseStorage in Frameworks */,
 				E5F2F22228423D20007CF7C6 /* SnapKit in Frameworks */,
 				E5F2F2292842F3EE007CF7C6 /* FirebaseAuth in Frameworks */,
+				E5F2F23A28436238007CF7C6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +117,7 @@
 				E5F2F211284204F7007CF7C6 /* ExploreController.swift */,
 				E5F2F2132842051B007CF7C6 /* NotificationsController.swift */,
 				E5F2F2152842052B007CF7C6 /* ConversationsController.swift */,
+				E5F2F23B28436C01007CF7C6 /* UploadTweetController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				E5F2F2282842F3EE007CF7C6 /* FirebaseAuth */,
 				E5F2F22A2842F3EE007CF7C6 /* FirebaseDatabase */,
 				E5F2F22C2842F3EE007CF7C6 /* FirebaseStorage */,
+				E5F2F23928436238007CF7C6 /* Kingfisher */,
 			);
 			productName = twitter;
 			productReference = E5F2F1F02841FC29007CF7C6 /* twitter.app */;
@@ -220,6 +226,7 @@
 			packageReferences = (
 				E5F2F22028423D20007CF7C6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E5F2F2272842F3EE007CF7C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E5F2F23828436238007CF7C6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E5F2F1F12841FC29007CF7C6 /* Products */;
 			projectDirPath = "";
@@ -256,6 +263,7 @@
 				E5F2F21A28420DD8007CF7C6 /* Extensions.swift in Sources */,
 				E5F2F21D2842126F007CF7C6 /* LoginController.swift in Sources */,
 				E5F2F23128430E39007CF7C6 /* AuthService.swift in Sources */,
+				E5F2F23C28436C01007CF7C6 /* UploadTweetController.swift in Sources */,
 				E5F2F23728435CE9007CF7C6 /* User.swift in Sources */,
 				E5F2F212284204F7007CF7C6 /* ExploreController.swift in Sources */,
 				E5F2F20E28420393007CF7C6 /* MainTabController.swift in Sources */,
@@ -488,6 +496,14 @@
 				minimumVersion = 9.1.0;
 			};
 		};
+		E5F2F23828436238007CF7C6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +526,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E5F2F2272842F3EE007CF7C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		E5F2F23928436238007CF7C6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5F2F23828436238007CF7C6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
