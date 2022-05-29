@@ -72,8 +72,14 @@ class LoginController: UIViewController {
     
     // MARK: - Selectors
     @objc func handleLogin() {
-        let vc = RegistrationController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text else { return }
+        AuthService.shared.logUserIn(email: email, password: password) { result, error in
+            if let error = error {
+                print(error.localizedDescription); return
+            }
+            print("Success!")
+        }
     }
     
     @objc func handleShowSignUp() {
