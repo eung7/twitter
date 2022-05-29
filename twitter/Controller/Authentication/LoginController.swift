@@ -78,7 +78,13 @@ class LoginController: UIViewController {
             if let error = error {
                 print(error.localizedDescription); return
             }
-            print("Success!")
+            // TODO: [x] window이해하기
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
+            guard let tab = window?.rootViewController as? MainTabController else { return }
+            tab.authenticateUserAndConfigure()
+            self.dismiss(animated: true)
         }
     }
     
