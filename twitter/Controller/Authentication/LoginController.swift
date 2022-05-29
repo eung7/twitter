@@ -46,7 +46,7 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    let loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(UIColor.twitterBlue, for: .normal)
@@ -58,7 +58,7 @@ class LoginController: UIViewController {
         return button
     }()
     
-    let dontHaveAccountButton: UIButton = {
+    lazy var dontHaveAccountButton: UIButton = {
         let button = Utilities.attributedButton("Don't have an account", " Sign Up")
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
@@ -84,6 +84,7 @@ class LoginController: UIViewController {
     func configureUI() {
         view.backgroundColor = .twitterBlue
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .white
         
         let stack = UIStackView(arrangedSubviews: [ emailContainerView, passwordContainerView, loginButton ])
         stack.axis = .vertical

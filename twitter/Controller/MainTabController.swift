@@ -9,7 +9,7 @@ import UIKit
 
 class MainTabController: UITabBarController {
     // MARK: - Properties
-    let actionButton: UIButton = {
+    lazy var actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .systemBackground
         button.backgroundColor = .twitterBlue
