@@ -10,6 +10,8 @@ import SnapKit
 
 class TweetCell: UICollectionViewCell {
     // MARK: - Properties
+    var tweet: Tweet? { didSet { configure()} }
+    
     let infoLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14.0)
@@ -148,4 +150,8 @@ class TweetCell: UICollectionViewCell {
 
     
     // MARK: - Helpers
+    func configure() {
+        guard let tweet = tweet else { return }
+        captionLabel.text = tweet.caption
+    }
 }
